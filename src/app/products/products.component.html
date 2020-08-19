@@ -1,0 +1,19 @@
+<h1>Test</h1>
+<div *ngFor="let cartItem of cartItems">
+    {{ cartItem.id }}
+    {{ cartItem.product }}
+    {{ cartItem.price }}
+    {{ cartItem.quantity }}
+    <button (click)="onDelete(cartItem.id)">Delete</button>
+</div>
+<div>
+    <form #newProduct="ngForm" (ngSubmit)="onSubmit(newProduct);">
+        <label for="product">New Product</label><br>
+        <input type="text" name="product" ngModel><br>
+        <label for="price">Price</label><br>
+        <input type="number" name="price" ngModel><br>
+        <label for="quantity">Quantity</label><br>
+        <input type="number" name="quantity" ngModel><br>
+        <button>Submit</button>
+    </form>
+</div>
